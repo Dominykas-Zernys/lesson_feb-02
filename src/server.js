@@ -14,6 +14,8 @@ const posts = [
 ]
 // MIDDLEWARE
 
+app.use(cors())
+
 // ROUTES
 
 app.get('/test', (req, res) => {
