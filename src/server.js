@@ -15,6 +15,7 @@ const posts = [
 // MIDDLEWARE
 
 app.use(cors())
+app.use(express.json())
 
 // ROUTES
 
@@ -26,6 +27,13 @@ app.get('/test', (req, res) => {
 
 app.get('/api/posts', (req, res) => {
     res.json({message: 'success', data: posts})
+})
+
+// POST /api/posts - create new post
+app.post('/api/posts', (req, res) => {
+    console.log('ssss', req.body)
+    posts.push(req.body)
+    res.json('new posts added to post')
 })
 
 // SERVER
